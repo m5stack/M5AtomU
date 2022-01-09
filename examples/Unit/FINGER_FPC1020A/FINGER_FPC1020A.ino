@@ -26,7 +26,6 @@ void CleanSerial() {
 
 void setup() {
     M5.begin();
-    Serial.begin(115200);
     Serial2.begin(19200, SERIAL_8N1, 32, 26);
     Serial.println("Finger example");
     userNum = FP_M.fpm_getUserNum();
