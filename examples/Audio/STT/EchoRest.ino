@@ -39,7 +39,7 @@ bool InitI2SSpeakOrMic(int mode) {
         .bits_per_sample =
             I2S_BITS_PER_SAMPLE_16BIT,  // is fixed at 12bit, stereo, MSB
         .channel_format       = I2S_CHANNEL_FMT_ALL_RIGHT,
-        .communication_format = I2S_COMM_FORMAT_I2S,
+        .communication_format = I2S_COMM_FORMAT_STAND_I2S,
         .intr_alloc_flags     = ESP_INTR_FLAG_LEVEL1,
         .dma_buf_count        = 6,
         .dma_buf_len          = 60,
@@ -57,6 +57,10 @@ bool InitI2SSpeakOrMic(int mode) {
 
     err += i2s_driver_install(SPEAK_I2S_NUMBER, &i2s_config, 0, NULL);
     i2s_pin_config_t tx_pin_config;
+
+#if (ESP_IDF_VERSION > ESP_IDF_VERSION_VAL(4, 3, 0))
+    tx_pin_config.mck_io_num = I2S_PIN_NO_CHANGE;
+#endif
 
     tx_pin_config.bck_io_num   = CONFIG_I2S_BCK_PIN;
     tx_pin_config.ws_io_num    = CONFIG_I2S_LRCK_PIN;
