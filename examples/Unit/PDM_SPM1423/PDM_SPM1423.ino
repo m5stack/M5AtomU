@@ -7,7 +7,7 @@
 * 获取更多资料请访问：https://docs.m5stack.com/zh_CN/unit/pdm
 *
 * describe: pdm.  麦克风
-* date：2021/8/27
+* date：2022/2/22
 *******************************************************************************
   Please connect to Port,Read the microphone data of the PDM Unit and display
 the audio loudness. 请连接端口,读取PDM Unit的麦克风数据，显示响度。 Note: Remove
@@ -17,6 +17,7 @@ the M5GO base when using this example, otherwise it will not work properly
 
 #include <M5Atom.h>
 #include <driver/i2s.h>
+
 #include "fft.h"
 
 #define PIN_CLK  32
@@ -43,9 +44,12 @@ bool InitI2SSpakerOrMic(int mode) {
                                         // 固定为12位立体声MSB
         .channel_format =
             I2S_CHANNEL_FMT_ONLY_RIGHT,  // Set the channel format. 设置频道格式
+#if ESP_IDF_VERSION > ESP_IDF_VERSION_VAL(4, 1, 0)
         .communication_format =
-            I2S_COMM_FORMAT_I2S,  // Set the format of the communication.
-                                  // 设置通讯格式
+            I2S_COMM_FORMAT_STAND_I2S,  // Set the format of the communication.
+#else                                   // 设置通讯格式
+        .communication_format = I2S_COMM_FORMAT_I2S,
+#endif
         .intr_alloc_flags =
             ESP_INTR_FLAG_LEVEL1,  // Set the interrupt flag.  设置中断的标志
         .dma_buf_count = 2,        // DMA buffer count.  DMA缓冲区计数
@@ -58,7 +62,13 @@ bool InitI2SSpakerOrMic(int mode) {
 
     i2s_driver_install(I2S_NUM_0, &i2s_config, 0,
                        NULL);  // Install and drive I2S.  安装并驱动I2S
+
     i2s_pin_config_t pin_config;
+
+#if (ESP_IDF_VERSION > ESP_IDF_VERSION_VAL(4, 3, 0))
+    pin_config.mck_io_num = I2S_PIN_NO_CHANGE;
+#endif
+
     pin_config.bck_io_num   = I2S_PIN_NO_CHANGE;
     pin_config.ws_io_num    = PIN_CLK;
     pin_config.data_out_num = I2S_PIN_NO_CHANGE;
@@ -163,6 +173,4 @@ void setup() {
     microPhoneSetup();
 }
 
-void loop() {
-    MicroPhoneFFT();
-}
+void loop() { MicroPhoneFFT(); }
