@@ -58,6 +58,6 @@
 
 **UIFlow 快速上手**: [点击这里](https://docs.m5stack.com/zh_CN/quick_start/atom_u/uiflow)
 
-**MicroPyhton API**: [点击这里](https://docs.m5stack.com/zh_CN/quick_start/atom_u/mpy)
+**MicroPython API**: [点击这里](https://docs.m5stack.com/zh_CN/quick_start/atom_u/mpy)
 
 **Arduino IDE 环境搭建**: [点击这里](https://docs.m5stack.com/zh_CN/quick_start/atom_u/arduino)
