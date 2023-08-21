@@ -30,7 +30,7 @@ void setup() {
         0xfff000);  // Light LED with the specified RGB color F00000(Atom-Matrix
                     // has only one light).  以指定RGB颜色fff000点亮所有LED
     // Wait for the M5Atom to receive network information from the phone
-    //等待M5Atom接收到来自手机的配网信息
+    // 等待M5Atom接收到来自手机的配网信息
     Serial.print(
         "\nWaiting for Phone SmartConfig.");  // Serial port format output
                                               // string.  串口格式化输出字符串

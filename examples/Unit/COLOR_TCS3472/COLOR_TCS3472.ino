@@ -37,7 +37,7 @@ void setup() {
     M5.begin();          // Init M5Atom.  初始化 M5Atom
     Wire.begin(26, 32);  // Initialize pin 26,32.  初始化26,32引脚
     Serial.println("Color View Test!");
-    while (!tcs.begin()) {  //如果color unit未能初始化
+    while (!tcs.begin()) {  // 如果color unit未能初始化
         Serial.println("No TCS34725 found ... check your connections");
         delay(1000);
     }

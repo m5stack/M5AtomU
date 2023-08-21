@@ -20,7 +20,7 @@ WiFiMulti wifiMulti;
 HTTPClient http;
 
 void setup() {
-    M5.begin();                        // Init M5Atom.  初始化 M5Atom
+    M5.begin();  // Init M5Atom.  初始化 M5Atom
     wifiMulti.addAP("M5-2.4G",
                     "Office@888888");  // Storage wifi configuration
                                        // information.  存储wifi配置信息

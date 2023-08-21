@@ -44,7 +44,7 @@ void showSignal() {
     for (n = 0; n < RANGE;
          n++)  // Within the horizontal resolution, each pixel is drawn
                // according to the calculated magnetic force
-    {          //在此范围内,根据计算得到的磁力大小
+    {          // 在此范围内,根据计算得到的磁力大小
         float value =
             ESP32_hallRead() - HallOffset;  // Reduce the influence of own
                                             // magnetism.  减少自身磁力的影响

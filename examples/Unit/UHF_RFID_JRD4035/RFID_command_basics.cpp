@@ -145,73 +145,73 @@ void UHF_RFID::Warningmessage(UBYTE nub) {
     switch (nub) {
         case 0x17:
             DATA_Str_Serial = "Error instruction code in command frame.";
-            //命令帧中指令代码错误。
+            // 命令帧中指令代码错误。
             break;
         case 0x20:
             DATA_Str_Serial =
                 "Frequency-hopping search channel timeout.All channels are "
                 "occupied during this time.";
-            //跳频搜索信道超时。所有信道在这段时间内都被占用。
+            // 跳频搜索信道超时。所有信道在这段时间内都被占用。
             break;
         case 0x15:
             DATA_Str_Serial =
                 "The polling operation failed.No tag is returned or CRC error "
                 "is returned for data.";
-            //轮询操作失败。没有标签返回或者返回数据 CRC 校验错误。
+            // 轮询操作失败。没有标签返回或者返回数据 CRC 校验错误。
             break;
         case 0x16:
             DATA_Str_Serial =
                 "Failed to access the label, it is possible that the access "
                 "password password is wrong";
-            //访问标签失败，有可能是访问密码 password 不对
+            // 访问标签失败，有可能是访问密码 password 不对
             break;
         case 0x09:
             DATA_Str_Serial =
                 "Failed to read the label data save area.The tag does not "
                 "return or returns a CRC error in the data";
-            //读标签数据存数区失败。标签没有返回或者返回数据 CRC 校验错误
+            // 读标签数据存数区失败。标签没有返回或者返回数据 CRC 校验错误
             break;
         case 0xA0:
             DATA_Str_Serial =
                 "Error reading label data store.The returned Code is 0xA0 bit "
                 "or Error Code To the.";
-            //读标签数据存储区错误。返回的代码由 0xA0 位或  Error Code 得到。
+            // 读标签数据存储区错误。返回的代码由 0xA0 位或  Error Code 得到。
             break;
         case 0x10:
             DATA_Str_Serial =
                 "Write label data save failed.The tag does not return or "
                 "returns a CRC error in the dataBy mistake.";
-            //写标签数据存数区失败。标签没有返回或者返回数据 CRC 校验错误。
+            // 写标签数据存数区失败。标签没有返回或者返回数据 CRC 校验错误。
             break;
         case 0xB0:
             DATA_Str_Serial =
                 "Error writing label data store.The returned Code is given by "
                 "the 0xB0 bit or Error Code To the.";
-            //写标签数据存储区错误。返回的代码由 0xB0 位或  Error Code 得到。
+            // 写标签数据存储区错误。返回的代码由 0xB0 位或  Error Code 得到。
             break;
         case 0x13:
             DATA_Str_Serial =
                 "Failed to lock label data save area.The tag does not return "
                 "or returns a CRC error in the data By mistake.";
-            //锁定标签数据存数区失败。标签没有返回或者返回数据 CRC 校验错误。
+            // 锁定标签数据存数区失败。标签没有返回或者返回数据 CRC 校验错误。
             break;
         case 0xC0:
             DATA_Str_Serial =
                 "Error locking label data store.The Code returned is 0xC0 bit "
                 "or Error Code Get it.";
-            //锁定标签数据存储区错误。返回的代码由 0xC0 位或  Error Code得到。
+            // 锁定标签数据存储区错误。返回的代码由 0xC0 位或  Error Code得到。
             break;
         case 0x12:
             DATA_Str_Serial =
                 "Inactivate tag failed.The tag does not return or returns a "
                 "CRC error in the data.";
-            //灭活标签失败。标签没有返回或者返回数据 CRC 校验错误。
+            // 灭活标签失败。标签没有返回或者返回数据 CRC 校验错误。
             break;
         case 0xD0:
             DATA_Str_Serial =
                 "Inactivated tag error.The returned Code is given by the 0xC0 "
                 "bit or Error Code.";
-            //灭活标签错误。返回的代码由 0xC0 位或 Error Code 得到。
+            // 灭活标签错误。返回的代码由 0xC0 位或 Error Code 得到。
             break;
         case 0x14:
             DATA_Str_Serial =
@@ -269,7 +269,7 @@ void UHF_RFID::Warningmessage(UBYTE nub) {
             DATA_Str_Serial = "Memory overrun.";
             // The specified label data store does not exist;Or the label does
             // not support EPCs of a specified length, such as XPC.
-            //指定的标签数据存储区不存在；或者该标签不支持指定长度的 EPC，比如
+            // 指定的标签数据存储区不存在；或者该标签不支持指定长度的 EPC，比如
             // XPC。
             break;
         case 0xA4:
@@ -280,7 +280,7 @@ void UHF_RFID::Warningmessage(UBYTE nub) {
             DATA_Str_Serial = "Memory locked.";
             // The specified label data store is locked and/or permanently
             // locked, and the locked state is writable or unreadable
-            //指定的标签数据存储区被锁定并且/或者是永久锁定，而且锁定状态为不可写或不可读
+            // 指定的标签数据存储区被锁定并且/或者是永久锁定，而且锁定状态为不可写或不可读
             break;
         case 0xAB:
         case 0xBB:
@@ -289,7 +289,7 @@ void UHF_RFID::Warningmessage(UBYTE nub) {
         case 0xEB:
             DATA_Str_Serial = "Insufficient power.";
             // The tag did not receive enough energy to write
-            //标签没有收到足够的能量来进行写操作
+            // 标签没有收到足够的能量来进行写操作
             break;
         case 0xAF:
         case 0xBF:
@@ -298,7 +298,7 @@ void UHF_RFID::Warningmessage(UBYTE nub) {
         case 0xEF:
             DATA_Str_Serial = "Non-specific error.";
             // The tag does not support error-code returns
-            //标签不支持 Error-code 返回
+            // 标签不支持 Error-code 返回
             break;
         default:
             break;

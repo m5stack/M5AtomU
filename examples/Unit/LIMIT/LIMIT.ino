@@ -17,7 +17,7 @@
 
 void setup() {
     M5.begin();  // Init M5Stack  初始化M5Stack
-    
+
     pinMode(KEY_PIN, INPUT_PULLUP);  // Init Limit pin.  初始化Limit引脚.
 }
 

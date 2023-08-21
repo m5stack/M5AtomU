@@ -11,10 +11,10 @@
 
 #define JSON_DOCSIZE 512
 
-#define DEV_PID_MANDARIN  "1537"  //普通话(纯中文识别)
-#define DEV_PID_M_AND_E   "1536"  //普通话(支持简单的英文识别)
-#define DEV_PID_ENGLISH   "1737"  //英语
-#define DEV_PID_CANTONESE "1637"  //粤语
+#define DEV_PID_MANDARIN  "1537"  // 普通话(纯中文识别)
+#define DEV_PID_M_AND_E   "1536"  // 普通话(支持简单的英文识别)
+#define DEV_PID_ENGLISH   "1737"  // 英语
+#define DEV_PID_CANTONESE "1637"  // 粤语
 
 struct pcmPack {
     uint8_t* packData;

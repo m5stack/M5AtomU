@@ -17,7 +17,7 @@ display them on the display Serial
 #include <M5Atom.h>
 #include "Adafruit_Sensor.h"
 #include <Adafruit_BMP280.h>
-#include "UNIT_ENV.h"
+#include "M5_ENV.h"
 SHT3X sht30;
 Adafruit_BMP280 bme;
 
@@ -32,7 +32,7 @@ void setup() {
 }
 
 void loop() {
-    while (!bme.begin(0x76)) {  //初始化bme传感器.  Init the sensor of bme
+    while (!bme.begin(0x76)) {  // 初始化bme传感器.  Init the sensor of bme
         Serial.println("Could not find a valid BMP280 sensor, check wiring!");
     }
     pressure = bme.readPressure();  // Stores the pressure gained by BMP.

@@ -14,7 +14,7 @@ display Serial 请连接端口,读取大气压强并在显示屏上显示
 */
 #include <M5Atom.h>
 #include "Wire.h"  //The BPS uses I2C comunication.
-#include "UNIT_ENV.h"
+#include "M5_ENV.h"
 
 QMP6988 qmp6988;
 

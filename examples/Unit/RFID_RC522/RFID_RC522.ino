@@ -29,7 +29,7 @@ void setup() {
 
 void loop() {
     if (!mfrc522.PICC_IsNewCardPresent() ||
-        !mfrc522.PICC_ReadCardSerial()) {  //如果没有读取到新的卡片
+        !mfrc522.PICC_ReadCardSerial()) {  // 如果没有读取到新的卡片
         delay(200);
         return;
     }
